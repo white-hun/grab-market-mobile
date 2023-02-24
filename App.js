@@ -1,16 +1,16 @@
+import React from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
+import BasketballImage from "./assets/products/basketball1.jpeg";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-      <View style={styles.box}>
-        <Text>1번</Text>
-      </View>
+      <Text>판매되는 상품들</Text>
       <View>
-        <Text style={styles.box}>2번</Text>
+        <View>
+          <Image source={BasketballImage} />
+        </View>
       </View>
     </View>
   );
@@ -20,13 +20,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  box: {
-    backgroundColor: "blue",
-    marginBottom: 8,
-    width: 100,
-    height: 100,
   },
 });
