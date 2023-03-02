@@ -3,8 +3,20 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Image } from "react-native";
 import BasketballImage from "./assets/products/basketball1.jpeg";
 import Avatar from "./assets/icons/avatar.png/";
+import { API_URL } from "./config/constants";
+import axios from "axios";
 
 export default function App() {
+  React.useEffect(() => {
+    axios
+      .get(`${API_URL}/products`)
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
   return (
     <View style={styles.container}>
       <Text>판매되는 상품들</Text>
